@@ -4,8 +4,8 @@ const testSlice = createSlice({
   name: 'test',
   initialState: 'Hello There',
   reducers: {
-    sayBye: (state, action) => {
-      state = 'Bye Bye';
+    sayBye: () => {
+      return 'Bye Bye';
     }
   }
 });
@@ -16,4 +16,5 @@ const store = configureStore({
   }
 });
 
+export const { sayBye } = testSlice.actions;
 export default store;
