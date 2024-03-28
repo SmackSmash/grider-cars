@@ -14,7 +14,9 @@ const CarForm = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    dispatch(addCar({ carName, carValue }));
+    setCarName('');
+    setCarValue('');
+    dispatch(addCar({ carName, carValue: Number(carValue) }));
   };
 
   return (
