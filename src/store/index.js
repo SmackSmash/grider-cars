@@ -1,20 +1,13 @@
-import { configureStore, createSlice } from '@reduxjs/toolkit';
+import { configureStore } from '@reduxjs/toolkit';
 
-const testSlice = createSlice({
-  name: 'test',
-  initialState: 'Hello There',
-  reducers: {
-    sayBye: () => {
-      return 'Bye Bye';
-    }
-  }
-});
+import carsSlice from './slices/carsSlice';
+import { addCar } from './slices/carsSlice';
 
 const store = configureStore({
   reducer: {
-    test: testSlice.reducer
+    cars: carsSlice.reducer
   }
 });
 
-export const { sayBye } = testSlice.actions;
+export { addCar };
 export default store;
