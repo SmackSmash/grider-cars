@@ -1,16 +1,12 @@
 const CarSearch = () => {
   return (
-    <div className='block is-align-items-flex-center is-justify-content-space-between is-flex-direction-row'>
-      <h1 className='title'>My Cars</h1>
-      <form className='field has-addons '>
-        <div className='control'>
-          <input className='input' type='search' name='car-search' id='car-search' placeholder='Find a car' />
-        </div>
-        <div className='control'>
-          <button className='button is-info' type='submit'>
-            Submit
-          </button>
-        </div>
+    <div className='bg-slate-500'>
+      <h1 className=''>My Cars</h1>
+      <form className=''>
+        <input className='' type='search' name='car-search' id='car-search' placeholder='Find a car' />
+        <button className='' type='submit'>
+          Submit
+        </button>
       </form>
     </div>
   );

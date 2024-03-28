@@ -1,19 +1,17 @@
 const CarForm = () => {
   return (
-    <form className='field is-grouped is-align-items-flex-end'>
-      <div className='control'>
+    <form className=''>
+      <div className=''>
         <label htmlFor='car-name'>Car Name</label>
-        <input className='input' type='text' name='car-name' id='car-name' />
+        <input className='' type='text' name='car-name' id='car-name' />
       </div>
-      <div className='control'>
+      <div className=''>
         <label htmlFor='car-value'>Car Value</label>
-        <input className='input' type='text' name='car-value' id='car-value' />
+        <input className='' type='text' name='car-value' id='car-value' />
       </div>
-      <div className='control'>
-        <button className='button is-primary' type='submit'>
-          Submit
-        </button>
-      </div>
+      <button className='' type='submit'>
+        Submit
+      </button>
     </form>
   );
 };
