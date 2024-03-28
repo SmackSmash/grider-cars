@@ -14,7 +14,7 @@ const App = () => {
   };
 
   return (
-    <div className='container'>
+    <div className='w-full p-4'>
       <h1 onClick={handleClick}>{test}</h1>
       <CarForm />
       <CarSearch />
