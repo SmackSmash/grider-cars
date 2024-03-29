@@ -1,22 +1,24 @@
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { addCar } from '../../store';
+import { useDispatch, useSelector } from 'react-redux';
+import { setName, setCost, addCar } from '../../store';
 
 const CarForm = () => {
-  const [carName, setCarName] = useState('');
-  const [carValue, setCarValue] = useState('');
+  const { name, cost } = useSelector(({ cars: { name, cost } }) => ({ name, cost }));
 
   const dispatch = useDispatch();
 
-  const handleCarChange = ({ target: { value } }) => setCarName(value);
+  const handleCarChange = ({ target: { value } }) => {
+    dispatch(setName(value));
+  };
 
-  const handleValueChange = ({ target: { value } }) => setCarValue(value);
+  const handleCostChange = ({ target: { value } }) => {
+    dispatch(setCost(Number(value)));
+  };
 
   const handleSubmit = e => {
     e.preventDefault();
-    setCarName('');
-    setCarValue('');
-    dispatch(addCar({ carName, carValue: Number(carValue) }));
+    dispatch(setName(''));
+    dispatch(setCost(0));
+    dispatch(addCar({ name, cost, id: Math.random() }));
   };
 
   return (
@@ -27,7 +29,7 @@ const CarForm = () => {
         </label>
         <input
           className='px-2 py-1 rounded shadow-sm outline-none'
-          value={carName}
+          value={name}
           onChange={handleCarChange}
           type='text'
           name='car-name'
@@ -40,8 +42,8 @@ const CarForm = () => {
         </label>
         <input
           className='px-2 py-1 rounded shadow-sm outline-none'
-          value={carValue}
-          onChange={handleValueChange}
+          value={cost ? cost : ''}
+          onChange={handleCostChange}
           type='number'
           name='car-value'
           id='car-value'
