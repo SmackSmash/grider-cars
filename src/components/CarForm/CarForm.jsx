@@ -5,8 +5,8 @@ const CarForm = () => {
   // Never destructure using useSelector as it will cause
   // rerendering bugs. Instead set values individually
   // WRONG! - const { name, cost } = useSelector(({ cars: { name, cost } }) => ({ name, cost }));
-  const name = useSelector(({ cars: { name } }) => name);
-  const cost = useSelector(({ cars: { cost } }) => cost);
+  const name = useSelector(({ form: { name } }) => name);
+  const cost = useSelector(({ form: { cost } }) => cost);
 
   const dispatch = useDispatch();
 
