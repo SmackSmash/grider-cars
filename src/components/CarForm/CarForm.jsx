@@ -2,7 +2,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setName, setCost, addCar } from '../../store';
 
 const CarForm = () => {
-  const { name, cost } = useSelector(({ cars: { name, cost } }) => ({ name, cost }));
+  // Never destructure using useSelector as it will cause
+  // rerendering bugs. Instead set values individually
+  // WRONG! - const { name, cost } = useSelector(({ cars: { name, cost } }) => ({ name, cost }));
+  const name = useSelector(({ cars: { name } }) => name);
+  const cost = useSelector(({ cars: { cost } }) => cost);
 
   const dispatch = useDispatch();
 

@@ -15,11 +15,14 @@ const carsSlice = createSlice({
     setCost: (state, action) => {
       return { ...state, cost: action.payload };
     },
+    setSearchTerm: (state, action) => {
+      return { ...state, searchTerm: action.payload };
+    },
     addCar: ({ cars }, action) => {
       cars.push(action.payload);
     }
   }
 });
 
-export const { setName, setCost, addCar } = carsSlice.actions;
+export const { setName, setCost, setSearchTerm, addCar } = carsSlice.actions;
 export default carsSlice;
