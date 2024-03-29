@@ -8,10 +8,10 @@ const formSlice = createSlice({
   },
   reducers: {
     setName: (state, action) => {
-      return { ...state, name: action.payload };
+      state.name = action.payload;
     },
     setCost: (state, action) => {
-      return { ...state, cost: action.payload };
+      state.cost = action.payload;
     }
   }
 });
