@@ -22,7 +22,7 @@ const CarForm = () => {
     e.preventDefault();
     dispatch(setName(''));
     dispatch(setCost(0));
-    dispatch(addCar({ name, cost, id: Math.random() }));
+    dispatch(addCar({ name, cost, id: Math.random().toString(16).slice(2) }));
   };
 
   return (

@@ -1,7 +1,14 @@
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { removeCar } from '../../store';
 
 const CarList = () => {
   const cars = useSelector(({ cars: { cars } }) => cars);
+
+  const dispatch = useDispatch();
+
+  const handleClick = id => {
+    dispatch(removeCar(id));
+  };
 
   return (
     <div className='bg-slate-400 p-4 rounded mb-4 flex flex-col gap-3'>
@@ -11,7 +18,9 @@ const CarList = () => {
               <p>
                 {name} - £{cost}
               </p>
-              <button className='flex-none bg-red-700 px-6 py-1 rounded text-slate-200 font-bold uppercase pointer shadow-sm hover:bg-red-600 active:relative active:top-[1px]'>
+              <button
+                className='flex-none bg-red-700 px-6 py-1 rounded text-slate-200 font-bold uppercase pointer shadow-sm hover:bg-red-600 active:relative active:top-[1px]'
+                onClick={() => handleClick(id)}>
                 Delete
               </button>
             </div>

@@ -20,9 +20,12 @@ const carsSlice = createSlice({
     },
     addCar: ({ cars }, action) => {
       cars.push(action.payload);
+    },
+    removeCar({ cars }, action) {
+      cars.splice(cars.indexOf(action.payload), 1);
     }
   }
 });
 
-export const { setName, setCost, setSearchTerm, addCar } = carsSlice.actions;
+export const { setName, setCost, setSearchTerm, addCar, removeCar } = carsSlice.actions;
 export default carsSlice;

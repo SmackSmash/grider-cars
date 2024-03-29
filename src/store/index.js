@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 
 import carsSlice from './slices/carsSlice';
-import { setName, setCost, setSearchTerm, addCar } from './slices/carsSlice';
+import { setName, setCost, setSearchTerm, addCar, removeCar } from './slices/carsSlice';
 
 const store = configureStore({
   reducer: {
@@ -9,5 +9,5 @@ const store = configureStore({
   }
 });
 
-export { setName, setCost, setSearchTerm, addCar };
+export { setName, setCost, setSearchTerm, addCar, removeCar };
 export default store;
