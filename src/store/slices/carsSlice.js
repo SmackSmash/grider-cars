@@ -19,5 +19,5 @@ const carsSlice = createSlice({
   }
 });
 
-export const { setName, setCost, setSearchTerm, addCar, removeCar } = carsSlice.actions;
+export const { setSearchTerm, addCar, removeCar } = carsSlice.actions;
 export default carsSlice;
