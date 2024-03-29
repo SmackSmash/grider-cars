@@ -16,7 +16,7 @@ const CarList = () => {
         ? cars.map(({ name, cost, id }) => (
             <div className='bg-slate-200 px-4 py-2 rounded shadow-sm flex justify-between items-center' key={id}>
               <p>
-                {name} - £{cost}
+                {name} - £{cost.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
               </p>
               <button
                 className='flex-none bg-red-700 px-6 py-1 rounded text-slate-200 font-bold uppercase pointer shadow-sm hover:bg-red-600 active:relative active:top-[1px]'
