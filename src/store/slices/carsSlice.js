@@ -2,10 +2,15 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const carsSlice = createSlice({
   name: 'cars',
-  initialState: [],
+  initialState: {
+    name: '',
+    cost: 0,
+    searchTerm: '',
+    cars: []
+  },
   reducers: {
     addCar: (state, action) => {
-      state.push(action.payload);
+      state.cars.push(action.payload);
     }
   }
 });

@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 
 const CarValue = () => {
-  const cars = useSelector(({ cars }) => cars);
+  const cars = useSelector(({ cars: { cars } }) => cars);
 
   return (
     <div className='bg-green-100 p-4 rounded text-end'>
