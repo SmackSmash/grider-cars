@@ -13,6 +13,12 @@ const formSlice = createSlice({
     setCost: (state, action) => {
       state.cost = action.payload;
     }
+  },
+  extraReducers: builder => {
+    builder.addCase('cars/addCar', state => {
+      state.name = '';
+      state.cost = 0;
+    });
   }
 });
 
