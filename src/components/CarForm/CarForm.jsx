@@ -20,9 +20,9 @@ const CarForm = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    dispatch(setName(''));
-    dispatch(setCost(0));
-    dispatch(addCar({ name, cost, id: Math.random().toString(16).slice(2) }));
+    // dispatch(setName(''));
+    // dispatch(setCost(0));
+    // dispatch(addCar({ name, cost, id: Math.random().toString(16).slice(2) }));
   };
 
   return (
