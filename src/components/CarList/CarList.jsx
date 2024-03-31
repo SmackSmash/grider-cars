@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { removeCar } from '../../store';
 
 const CarList = () => {
+  const nameToAdd = useSelector(({ form: { name } }) => name);
   const cars = useSelector(({ cars: { cars } }) => cars);
 
   const dispatch = useDispatch();
@@ -15,7 +16,7 @@ const CarList = () => {
       {cars.length
         ? cars.map(({ name, cost, id }) => (
             <div className='bg-slate-200 px-4 py-2 rounded shadow-sm flex justify-between items-center' key={id}>
-              <p>
+              <p className={nameToAdd.length > 0 && name.includes(nameToAdd) ? 'font-bold' : ''}>
                 {name} - £{cost.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
               </p>
               <button
