@@ -11,11 +11,6 @@ const CarList = () => {
     dispatch(removeCar(id));
   };
 
-  const str = 'This is only a test';
-  const match = 'on';
-
-  console.log(str.slice(0, str.lastIndexOf(match)) + match + str.slice(str.indexOf(match) + match.length));
-
   return (
     <div className='bg-slate-400 p-4 rounded mb-4 flex flex-col gap-3'>
       {cars.length
