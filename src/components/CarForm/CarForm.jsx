@@ -1,4 +1,4 @@
-import { nanoid } from 'nanoid';
+import { nanoid } from '@reduxjs/toolkit';
 import { useDispatch, useSelector } from 'react-redux';
 import { setName, setCost, addCar } from '../../store';
 
@@ -21,7 +21,9 @@ const CarForm = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    dispatch(addCar({ name, cost, id: nanoid() }));
+    name === '' || cost === 0
+      ? alert('Please fill in both form fields')
+      : dispatch(addCar({ name, cost, id: nanoid() }));
   };
 
   return (
