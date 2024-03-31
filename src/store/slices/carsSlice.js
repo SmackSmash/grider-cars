@@ -20,4 +20,4 @@ const carsSlice = createSlice({
 });
 
 export const { setSearchTerm, addCar, removeCar } = carsSlice.actions;
-export default carsSlice;
+export default carsSlice.reducer;

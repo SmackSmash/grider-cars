@@ -23,4 +23,4 @@ const formSlice = createSlice({
 });
 
 export const { setName, setCost } = formSlice.actions;
-export default formSlice;
+export default formSlice.reducer;
