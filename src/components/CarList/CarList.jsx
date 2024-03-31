@@ -22,7 +22,7 @@ const CarList = () => {
         ? cars.map(({ name, cost, id }) => (
             <div className='bg-slate-200 px-4 py-2 rounded shadow-sm flex justify-between items-center' key={id}>
               <p>
-                {name.includes(nameToAdd) && nameToAdd !== '' ? name.slice(0, name.lastIndexOf(nameToAdd)) : name}
+                {name.includes(nameToAdd) && nameToAdd !== '' ? name.slice(0, name.indexOf(nameToAdd)) : name}
                 {name.includes(nameToAdd) && nameToAdd !== '' && <strong>{nameToAdd}</strong>}
                 {name.includes(nameToAdd) && nameToAdd !== '' && name.slice(name.indexOf(nameToAdd) + nameToAdd.length)}
                 - £{cost.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
