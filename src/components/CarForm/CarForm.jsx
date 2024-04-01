@@ -47,7 +47,7 @@ const CarForm = () => {
         </label>
         <input
           className='px-2 py-1 rounded shadow-sm outline-none'
-          value={cost ? cost : ''}
+          value={cost || ''}
           onChange={handleCostChange}
           type='number'
           name='car-value'
