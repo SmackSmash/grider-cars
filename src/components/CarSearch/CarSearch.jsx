@@ -3,6 +3,7 @@ import { setSearchTerm } from '../../store';
 
 const CarSearch = () => {
   const searchTerm = useSelector(({ cars: { searchTerm } }) => searchTerm);
+  const list = useSelector(({ cars: { list } }) => list);
 
   const dispatch = useDispatch();
 
@@ -10,10 +11,15 @@ const CarSearch = () => {
     dispatch(setSearchTerm(value));
   };
 
+  const handleSubmit = e => {
+    e.preventDefault();
+    console.log(list.filter(({ name }) => !name.indexOf(searchTerm)));
+  };
+
   return (
     <div className='bg-slate-400 p-4 flex justify-between items-center rounded mb-4'>
       <h1 className='uppercase font-extrabold text-xl'>My Cars</h1>
-      <form>
+      <form onSubmit={handleSubmit}>
         <input
           className='px-2 py-1 rounded-l shadow-sm outline-none'
           value={searchTerm}
