@@ -2,8 +2,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { removeCar } from '../../store';
 
 const CarList = () => {
-  const nameToAdd = useSelector(({ form: { name } }) => name);
   const list = useSelector(({ cars: { list } }) => list);
+  const nameToAdd = useSelector(({ form: { name } }) => name);
+  const searchTerm = useSelector(({ cars: { searchTerm } }) => searchTerm);
 
   const dispatch = useDispatch();
 
@@ -11,10 +12,12 @@ const CarList = () => {
     dispatch(removeCar(id));
   };
 
+  const filteredList = list.filter(({ name }) => name.includes(searchTerm));
+
   return (
     <div className='bg-slate-400 p-4 rounded mb-4 flex flex-col gap-3'>
-      {list.length
-        ? list.map(({ name, cost, id }) => (
+      {filteredList.length
+        ? filteredList.map(({ name, cost, id }) => (
             <div className='bg-slate-200 px-4 py-2 rounded shadow-sm flex justify-between items-center' key={id}>
               <p>
                 {name.includes(nameToAdd) && nameToAdd !== '' ? name.slice(0, name.indexOf(nameToAdd)) : name}
