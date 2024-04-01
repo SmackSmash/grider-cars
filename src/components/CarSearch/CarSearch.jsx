@@ -13,7 +13,7 @@ const CarSearch = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    console.log(list.filter(({ name }) => !name.indexOf(searchTerm)));
+    console.log(list.filter(({ name }) => name.includes(searchTerm)));
   };
 
   return (
