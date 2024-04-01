@@ -5,7 +5,7 @@ import CarValue from './components/CarValue/CarValue';
 
 const App = () => {
   return (
-    <div className='w-full max-w-screen-lg mx-auto p-4'>
+    <div className='w-full max-w-screen-lg mx-auto p-8'>
       <CarForm />
       <CarSearch />
       <CarList />

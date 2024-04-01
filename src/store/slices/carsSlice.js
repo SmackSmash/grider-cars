@@ -4,17 +4,17 @@ const carsSlice = createSlice({
   name: 'cars',
   initialState: {
     searchTerm: '',
-    cars: []
+    list: []
   },
   reducers: {
     setSearchTerm: (state, action) => {
       state.searchTerm = action.payload;
     },
-    addCar: ({ cars }, action) => {
-      cars.push(action.payload);
+    addCar: ({ list }, action) => {
+      list.push(action.payload);
     },
-    removeCar({ cars }, action) {
-      cars.splice(cars.indexOf(action.payload), 1);
+    removeCar({ list }, action) {
+      list.splice(list.indexOf(action.payload), 1);
     }
   }
 });

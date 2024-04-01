@@ -3,7 +3,7 @@ import { removeCar } from '../../store';
 
 const CarList = () => {
   const nameToAdd = useSelector(({ form: { name } }) => name);
-  const cars = useSelector(({ cars: { cars } }) => cars);
+  const list = useSelector(({ cars: { list } }) => list);
 
   const dispatch = useDispatch();
 
@@ -13,8 +13,8 @@ const CarList = () => {
 
   return (
     <div className='bg-slate-400 p-4 rounded mb-4 flex flex-col gap-3'>
-      {cars.length
-        ? cars.map(({ name, cost, id }) => (
+      {list.length
+        ? list.map(({ name, cost, id }) => (
             <div className='bg-slate-200 px-4 py-2 rounded shadow-sm flex justify-between items-center' key={id}>
               <p>
                 {name.includes(nameToAdd) && nameToAdd !== '' ? name.slice(0, name.indexOf(nameToAdd)) : name}
