@@ -16,7 +16,7 @@ const formSlice = createSlice({
     }
   },
   extraReducers: builder => {
-    builder.addCase(addCar().type, state => {
+    builder.addCase(addCar, state => {
       state.name = '';
       state.cost = 0;
     });
